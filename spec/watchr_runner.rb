@@ -29,6 +29,12 @@ watch( '^spec/.*_spec\.rb'                        ) { |m| run_single_spec(m[0]) 
 watch( '^app/(.*)\.rb'                            ) { |m| run_single_spec("spec/%s_spec.rb" % m[1]) }
 watch( '^lib/(.*)\.rb'                            ) { |m| run_single_spec("spec/other/%s_spec.rb" % m[1] ) }
 
+watch( '.*.feature' )  { |md| 
+  puts '=' * 100
+  puts "Running #{md[0]}"
+  system("cucumber -r features #{md[0]}")
+}
+
 
 # --------------------------------------------------
 # Signal Handling

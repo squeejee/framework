@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
   #Nested Attribuets
   accepts_nested_attributes_for :profile, :allow_destroy => true
   
+  def self.find_by_login_or_email(login)
+    find_by_email(login) || find_by_login(login)
+  end
+  
   def self.invite_count
     User.sum(:invites)
   end

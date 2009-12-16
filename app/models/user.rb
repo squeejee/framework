@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   
   #Validations
   validates_uniqueness_of :email, :case_sensitive => false
+  validates_uniqueness_of :login, :case_sensitive => false
   validates_presence_of :email
   validates_presence_of :login
   validates_length_of :email,    :within => 3..100

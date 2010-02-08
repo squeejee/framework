@@ -1,6 +1,6 @@
 SiteSetting.seed(:name) do |s|
-  s.name = "Handcrafted Foundation"
-  s.admin_email = "admin@gethandcrafted.com"
-  s.url = "http://gethandcrafted.com"
-  s.description = "A website founded on beautiful handcrafted code"
+  s.name = "Four Bean Soup Broth"
+  s.admin_email = "admin@fourbeansoup.com"
+  s.url = "http://fourbeansoup.com"
+  s.description = "A website cooked with beautiful tasty code"
 end

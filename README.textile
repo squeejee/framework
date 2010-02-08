@@ -1,8 +1,8 @@
-h1. Handcrafted Foundation
+h1. Four Bean Soup Broth
 
-Handcrafted is a small team of Ruby on Rails developers (mainly "Josh Owens":http://josh.the-owens.com and "Adam Stacoviak":http://adamstacoviak.com/). We focus on creating smart, usable web sites built on a foundation of clean, extensible, handcrafted code. We eat our own dog food, we use Foundation as our core starting point to ensure consistency through-out our applications. We bake all our goodness in here. Once.
+"Four Bean Soup":http://fourbeansoup.com is a web application development company (mainly "Josh Owens":http://railsfreak.com). We focus on creating smart, usable web sites built on a foundation of clean, extensible, handcrafted code. We eat our own dog food, we use Broth as our core starting point to ensure consistency through-out our applications. We cook all our goodness in here, Once.
 
-Foundation is built with certain specific standards and opinions in mind. We were tired of re-writing and copy & pasting the same code over and over from project to project. Then git came along. Git helped us realize there was a better way.
+Broth is built with certain specific standards and opinions in mind. We were tired of re-writing and copy & pasting the same code over and over from project to project. Then git came along. Git helped us realize there was a better way.
 
 h2. Key Concepts
 
@@ -25,16 +25,16 @@ h2. Opinionated Choices
 h2. Gotchas
 
 * We try to use "Markers" in key files, such as routes and application.js. We do this to ensure that continued foundation development doesn't trample continued application development
-* Don't annotate the base Foundation application. You should only be annotating the models in your real application
+* Don't annotate the models in the base Broth application. You should only be annotating the models in your real application
 
 h2. Installation Steps (development)
 
-1.  mkdir My-Foundation-App
-2.  cd My-Foundation-App
+1.  mkdir My-Broth-App
+2.  cd My-Broth-App
 3.  git init
-4.  git remote add foundation git://github.com/handcrafted/foundation.git
+4.  git remote add foundation git://github.com/fourbeansoup/broth.git
 5.  git pull foundation master
-6.  git remote add origin git@github.com:me/my-foundation-app.git
+6.  git remote add origin git@github.com:me/my-broth-app.git
 7.  cp config/database.example.yml config/database.yml
 8.  Confirm database setup in config/database.yml
 9.  sudo gem sources -a http://gemcutter.org/

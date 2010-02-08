@@ -8,7 +8,7 @@ Feature: Sign in
     Given no user exists with an email of "email@person.com"
     When I go to the sign in page
     And I sign in as "email@person.com/password"
-    Then I should see "There is an issue with your credentials."
+    Then I should see "Email is not valid"
     And I should be signed out
   
   Scenario: User signs in successfully

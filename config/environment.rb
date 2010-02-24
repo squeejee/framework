@@ -19,16 +19,18 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
   # config.gem "tinder", :lib => false
-  config.gem 'devise'
-  config.gem 'will_paginate', :lib => 'will_paginate', :source => 'http://gemcutter.org'
-  config.gem 'paperclip', :lib     => 'paperclip', :source  => 'http://gemcutter.org', :version => '>= 2.2.9'
-  config.gem 'whenever', :lib => false, :source => 'http://gemcutter.org', :version => '>= 0.3.7'
+  config.gem 'warden',                    :version => '>= 0.9.4'
+  config.gem 'devise',                    :version => '>= 1.0.3'
+  config.gem 'chronic',                   :version => '>= 0.2.3'
+  config.gem 'will_paginate',             :version => '>= 2.3.11',  :lib => 'will_paginate',  :source => 'http://gemcutter.org'
+  config.gem 'paperclip',                 :version => '>= 2.2.9',   :lib => 'paperclip',      :source => 'http://gemcutter.org'
+  config.gem 'whenever',                  :version => '>= 0.3.7',   :lib => false,            :source => 'http://gemcutter.org'
   config.gem 'friendly_id'
   config.gem 'newrelic_rpm'
   config.gem 'liquid'
-  config.gem 'haml', :version => '>= 2.2.0'
-  config.gem 'compass', :source => 'http://gemcutter.org', :version => '>= 0.8.5'
-  config.gem 'grid-coordinates', :lib => 'compass', :source => 'gemcutter.org', :version => '>= 1.0.3'
+  config.gem 'haml',                      :version => '>= 2.2.0'
+  config.gem 'compass',                   :version => '>= 0.8.5',                             :source => 'http://gemcutter.org'
+  config.gem 'grid-coordinates',          :version => '>= 1.0.3',   :lib => 'compass',        :source => 'http://gemcutter.org'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

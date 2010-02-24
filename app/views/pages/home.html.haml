@@ -7,7 +7,7 @@
     Homepage
 
 #page_body
-  - if signed_in?
+  - if user_signed_in?
     %p
       Cool, you are already signed in. Good work!
     %p
@@ -18,12 +18,12 @@
   - else
     %p
       Seems you need to get started. Go ahead and
-      = link_to "sign in", signin_url
+      = link_to "sign in", new_user_session_path
       or
-      = link_to "sign up", signup_url
+      = link_to "sign up", new_user_registration_path
       for a new account.
   
-  = render :partial => "shared/content_samples" if signed_in?
+  = render :partial => "shared/content_samples" if user_signed_in?
 
 #page_sidebar
   .wrap

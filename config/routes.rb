@@ -1,10 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resource :account, :controller => "users"
-  map.resources :users
-  map.resource :user_session
-  map.resources :password_resets
+  map.resource  :account
   map.resources :pages
   map.resources :invites, :referrals
+  map.devise_for :users
   # APP MARKER - Place app specific routes below this line
   
   map.namespace :admin do |admin|
@@ -19,13 +17,9 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.admin "/admin", :controller => "admin/dashboard", :action => "show"
-
-  map.signup "/signup", :controller => "users", :action => "new"
-  map.signout "/signout", :controller => "user_sessions", :action => "destroy"
-  map.signin "/signin", :controller => "user_sessions", :action => "new"
   # APP MARKER - Place app specific routes below this line
   
   
   map.root :page
-  map.profile "/:id", :controller => "users", :action => "show"
+  map.profile "/:id", :controller => "accounts", :action => "show"
 end

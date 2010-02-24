@@ -1,5 +1,6 @@
 - flash.each do |type, msg|
-  .flash{:class => "#{type}"}
-    .padding
-      %p
-        = html_escape(msg)
+  - if valid_flash_type?(type)
+    .flash{:class => "#{type}"}
+      .padding
+        %p
+          = html_escape(msg)

@@ -19,4 +19,4 @@ Feature: Sign up
     And I fill in "Password" with "passw0rd"
     And I fill in "Password confirmation" with "passw0rd"
     And I press "Sign Up"
-    Then I should see "Thank you for signing up"
+    Then I should see "You have signed up successfully"

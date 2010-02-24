@@ -2,23 +2,23 @@
   %ul
     %li.home
       = link_to "Home", root_url
-    - if signed_in? && current_user.admin?
+    - if user_signed_in? && current_user.admin?
       %li.admin
         = link_to "Admin", admin_url
     - if @site.beta_invites?
       %li.invites
-        - if signed_in?
+        - if user_signed_in?
           = link_to "Invite a Friend", new_invite_url
         - else
           = link_to "Request an Invite", new_invite_url
     - if @site.referrals?
       %li.referrals
         = link_to 'Refer a Friend', new_referral_url
-    - if signed_in?
+    - if user_signed_in?
       %li.account
-        = link_to 'My Account', user_url(current_user)
-    - if signed_out?
+        = link_to 'My Account', account_url
+    - if user_signed_out?
       %li.signup
-        = link_to "Sign Up", signup_url
+        = link_to "Sign Up", new_user_registration_path
       %li.signin
-        = link_to "Sign In", signin_url
+        = link_to "Sign In", new_user_session_path

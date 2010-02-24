@@ -1,0 +1,15 @@
+#page_header
+  %h2{:style => "position: relative;"}
+    = @user.email
+    - if @site.user_avatars?
+      = image_tag(@user.profile.avatar.url(:thumb), :style => "position: absolute; top: 0; right: 0;")
+
+#page_body
+  %p
+    - if user_signed_in? && current_user == @user
+      Click here to
+      = link_to "edit your account", edit_user_registration_url
+
+  -if @site.beta_invites? && signed_in?
+    = render :partial => "shared/notice_invites"
+    = render :partial => "invites/invite"

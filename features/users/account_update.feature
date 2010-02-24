@@ -23,5 +23,6 @@ Feature: Account Update
     When I go to the account edit page
     And I fill in "password" with "passw0rd"
     And I fill in "password confirmation" with "passw0rd"
+    And I fill in "current password" with "password"
     And I press "Update"
-    Then I should see "Your account has been updated"
+    Then I should see "You updated your account successfully"

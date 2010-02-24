@@ -3,7 +3,6 @@ Factory.define :valid_user , :class => User do |u|
   u.login { Factory.next(:login) }
   u.password "123456"
   u.password_confirmation "123456"
-  u.single_access_token { Factory.next(:single_access_token) }
   u.admin false
   u.invites 3
 end
@@ -12,7 +11,6 @@ Factory.define :admin_user , :class => User do |u|
   u.email "admin@gmail.com"
   u.password "123456"
   u.password_confirmation "123456"
-  u.single_access_token { Factory.next(:single_access_token) }
   u.admin true
 end
 

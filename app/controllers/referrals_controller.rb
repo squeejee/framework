@@ -7,7 +7,7 @@ class ReferralsController < ApplicationController
   end
   
   def new
-    @referral = Referral.new(:referrer => current_user) if signed_in?
+    @referral = Referral.new(:referrer => current_user) if user_signed_in?
   end
 
   def create

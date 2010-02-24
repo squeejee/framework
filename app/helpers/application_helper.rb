@@ -57,6 +57,11 @@ module ApplicationHelper
     return true
   end
   
+  def valid_flash_type?(type)
+    valid_type = [ :notice, :warning, :error, :alert ]
+    valid_type.include?(type.to_sym)
+  end
+  
   private
   
     def title_fields

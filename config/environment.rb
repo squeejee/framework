@@ -19,7 +19,7 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
   # config.gem "tinder", :lib => false
-  config.gem 'authlogic'
+  config.gem 'devise'
   config.gem 'will_paginate', :lib => 'will_paginate', :source => 'http://gemcutter.org'
   config.gem 'paperclip', :lib     => 'paperclip', :source  => 'http://gemcutter.org', :version => '>= 2.2.9'
   config.gem 'whenever', :lib => false, :source => 'http://gemcutter.org', :version => '>= 0.3.7'

@@ -11,13 +11,13 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
     when /the sign up page/
-      signup_path
+      new_user_registration_path
     when /the sign in page/
-      signin_path
+      new_user_session_path
     when /the account page/
       account_path
     when /the account edit page/
-      edit_account_path
+      edit_user_registration_path
     when /the new referral page/
       new_referral_path
     when /^(.*)'s profile page$/i

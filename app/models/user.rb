@@ -1,14 +1,14 @@
 class User < ActiveRecord::Base
-  acts_as_authentic do
-    login_field :email
-    validate_login_field :false
-  end
+  devise :authenticatable, :lockable, :recoverable,
+         :rememberable, :registerable, :trackable, :timeoutable, :validatable
+  
+  attr_accessible :login, :email, :password, :password_confirmation
   
   has_friendly_id :login, :use_slug => true
   
   liquid_methods :display_name, :perishable_token
   
-  attr_protected :admin
+#  attr_protected :admin
   
   #Validations
   validates_uniqueness_of :email, :case_sensitive => false

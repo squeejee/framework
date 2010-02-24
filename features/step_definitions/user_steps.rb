@@ -34,10 +34,10 @@ When /^I sign in( with "remember me")? as "(.*)\/(.*)"$/ do |remember, email, pa
 end
 
 Then /^I should be signed in$/ do
-  controller.should be_signed_in
+  controller.should be_user_signed_in
 end
 
 Then /^I should be signed out$/ do
-  controller.should be_signed_out
+  controller.should be_user_signed_out
 end
 

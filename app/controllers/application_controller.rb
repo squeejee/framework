@@ -6,29 +6,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   filter_parameter_logging :password, :password_confirmation
-  helper_method :current_user_session, :current_user, :signed_in?, :signed_out?
+  helper_method :current_user_session, :current_user, :user_signed_out?
   before_filter :find_site
 
-  def signed_in?
-    ! current_user.nil?
-  end
-  
-  def signed_out?
-    current_user.nil?
+  def user_signed_out?
+    ! user_signed_in?
   end
 
   private
   
     def current_user_session
-      return @current_user_session if defined?(@current_user_session)
-      @current_user_session = UserSession.find
+      user_session
     end
 
-    def current_user
-      return @current_user if defined?(@current_user)
-      @current_user = current_user_session && current_user_session.user
-    end
-    
     def require_user
       unless current_user
         store_location
@@ -42,8 +32,8 @@ class ApplicationController < ActionController::Base
       unless current_user && current_user.admin?
         store_location
         flash[:notice] = "You must be an admin to access this page"
-        redirect_to account_url if signed_in?
-        redirect_to signin_url if signed_out?
+        redirect_to account_url if user_signed_in?
+        redirect_to signin_url if user_signed_out?
         return false
       end
     end

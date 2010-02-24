@@ -29,7 +29,7 @@ config.action_mailer.delivery_method = :test
 
 config.gem 'webrat', :version => '>= 0.4.4', :lib => false
 config.gem 'cucumber', :version => '>= 0.3.0', :lib => false
-config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source  => "http://gems.github.com", :version => '1.2.1'
+config.gem 'factory_girl', :lib => 'factory_girl', :version => '>= 1.2.3'
 config.gem "rspec", :lib => false, :version => ">= 1.2.0" 
 config.gem "rspec-rails", :lib => false, :version => ">= 1.3.2"
 config.gem 'pickle', :lib => false, :version => '>=0.1.23'

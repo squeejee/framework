@@ -16,5 +16,3 @@ begin
 rescue LoadError
   # do nothing
 end
-
-require(File.join(RAILS_ROOT, 'vendor', 'gems', 'jscruggs-metric_fu-1.1.4', 'lib', 'metric_fu'))

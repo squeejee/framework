@@ -25,24 +25,21 @@ module SeedFu
       end
     end
 
-    def set_attribute(name, value)
-      @data[name.to_sym] = value
-    end
-
     def plant! insert_only=false
       record = get
       return if !record.new_record? and insert_only
       @data.each do |k, v|
         record.send("#{k}=", v)
       end
-      record.save!
+      raise "Error Saving: #{record.inspect}" unless record.save(false)
       puts " - #{@model_class} #{condition_hash.inspect}"      
       record
     end
 
     def method_missing(method_name, *args) #:nodoc:
-      if (match = method_name.to_s.match(/(.*)=$/)) && args.size == 1
-        set_attribute(match[1], args.first)
+      if args.size == 1 and (match = method_name.to_s.match(/(.*)=$/))
+        self.class.class_eval "def #{method_name} arg; @data[:#{match[1]}] = arg; end"
+        send(method_name, args[0])
       else
         super
       end
@@ -61,7 +58,7 @@ module SeedFu
     end
 
     def condition_hash
-      @data.reject{|a,v| !@constraints.include?(a)}
+      @constraints.inject({}) {|a,c| a[c] = @data[c]; a }
     end
   end
 end
@@ -74,6 +71,11 @@ class ActiveRecord::Base
   # === Parameters
   # constraints :: Immutable reference attributes. Defaults to :id
   def self.seed(*constraints, &block)
+    SeedFu::Seeder.plant(self, *constraints, &block)
+  end
+  
+  def self.seed_once(*constraints, &block)
+    constraints << true
     SeedFu::Seeder.plant(self, *constraints, &block)
   end
 

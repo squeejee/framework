@@ -46,7 +46,7 @@ module ApplicationHelper
   end
   
   def production_env?
-    RAILS_ENV == 'production'
+    Rails.env == 'production'
   end
   
   def require_js?

@@ -10,6 +10,9 @@ module Delayed
     MAX_RUN_TIME = 4.hours
     set_table_name :delayed_jobs
 
+    # Set up callbacks
+    before_save :set_run_at
+
     # By default failed jobs are destroyed after too many attempts.
     # If you want to keep them around (perhaps to inspect the reason
     # for the failure), set this to false.
@@ -73,7 +76,7 @@ module Delayed
         save!
       else
         logger.info "* [JOB] PERMANENTLY removing #{self.name} because of #{attempts} consequetive failures."
-        destroy_failed_jobs ? destroy : update_attribute(:failed_at, Time.now)
+        destroy_failed_jobs ? destroy : update_attribute(:failed_at, Delayed::Job.db_time_now)
       end
     end
 
@@ -249,12 +252,12 @@ module Delayed
     # Note: This does not ping the DB to get the time, so all your clients
     # must have syncronized clocks.
     def self.db_time_now
-      (ActiveRecord::Base.default_timezone == :utc) ? Time.now.utc : Time.now
+      (ActiveRecord::Base.default_timezone == :utc) ? Time.now.utc : Time.zone.now
     end
 
   protected
 
-    def before_save
+    def set_run_at
       self.run_at ||= self.class.db_time_now
     end
 

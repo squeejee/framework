@@ -21,6 +21,7 @@ gem 'liquid',               '>= 2.0.0'                                  , :git =
 gem 'haml',                 '>= 2.2.0'
 gem 'compass',              '>= 0.10.0.pre8'                            , :git => "git://github.com/chriseppstein/compass.git"
 gem 'grid-coordinates',     '>= 1.0.3'
+gem 'hoptoad_notifier',     '>= 2.2.0'
 # Unsupported on Rails3 as of now
 # gem 'newrelic_rpm',         '>= 2.9.5'                                , :git => "git://github.com/newrelic/rpm.git"
 # gem 'friendly_id',          '>= 2.1.1'

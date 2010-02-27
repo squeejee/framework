@@ -19,12 +19,12 @@ gem 'will_paginate',        '>= 2.3.11',  :require => 'will_paginate'
 gem 'paperclip',            '>= 2.2.9',   :require => 'paperclip'       , :git => "git://github.com/thoughtbot/paperclip.git", :branch => "rails3"
 gem 'liquid',               '>= 2.0.0'                                  , :git => "git://github.com/tobi/liquid.git"
 gem 'haml',                 '>= 2.2.0'
-gem 'compass',              '>= 0.9.9'                                  , :git => "git://github.com/chriseppstein/compass.git"
+gem 'compass',              '>= 0.10.0.pre8'                            , :git => "git://github.com/chriseppstein/compass.git"
 gem 'grid-coordinates',     '>= 1.0.3'
 # Unsupported on Rails3 as of now
-# gem 'newrelic_rpm',         '>= 2.9.5'                                  , :git => "git://github.com/newrelic/rpm.git"
+# gem 'newrelic_rpm',         '>= 2.9.5'                                , :git => "git://github.com/newrelic/rpm.git"
 # gem 'friendly_id',          '>= 2.1.1'
-# gem 'whenever',             '>= 0.4.1'                                  , :git => "git://github.com/marcroberts/whenever.git"
+# gem 'whenever',             '>= 0.4.1'                                , :git => "git://github.com/marcroberts/whenever.git"
 
 
 ## Bundle gems used only in certain environments:

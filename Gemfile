@@ -41,4 +41,5 @@ group :test do
     gem 'factory_girl',     '>= 1.2.3', :require => false               , :git => "git://github.com/thoughtbot/factory_girl.git", :branch => "rails3"
     gem 'pickle',           '>= 0.2.1'
     gem 'metric_fu',        '>= 1.3.0', :require => 'metric_fu'
+    gem 'no_peeping_toms'                                               , :git => "git://github.com/patmaddox/no-peeping-toms.git"
 end

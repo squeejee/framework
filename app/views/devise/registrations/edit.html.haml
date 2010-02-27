@@ -9,7 +9,7 @@
       = f.text_field :email, :example => "johnsmith@gmail.com"
       = f.text_field :login, :label => "Profile url", :example => "#{@site.url}/profile_url"
       = f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones
-      - fields_for @user.profile, :builder => HandcraftedFormBuilder do |p|
+      - f.fields_for :profile, :builder => HandcraftedFormBuilder do |p|
         = p.text_field :first_name
         = p.text_field :last_name
         - if @site.user_avatars?

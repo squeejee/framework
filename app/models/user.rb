@@ -21,10 +21,10 @@ class User < ActiveRecord::Base
   #Callbacks
   before_validation :make_login, :on => :create
   before_create :make_first_admin
-  after_create :create_profile
+  before_create :create_profile
   
   #Nested Attribuets
-  accepts_nested_attributes_for :profile, :allow_destroy => true
+  accepts_nested_attributes_for :profile, :allow_destroy => true, :update_only => true
   
   def self.find_by_login_or_email(login)
     find_by_email(login) || find_by_login(login)
@@ -38,9 +38,9 @@ class User < ActiveRecord::Base
     self.admin = true if first_user?
   end
   
-  # def create_profile
-  #   profile.create
-  # end
+  def create_profile
+    self.profile = Profile.new
+  end
   
   def make_login
     self.login = self.email.split("@")[0] if self.login.blank? && !self.email.blank?

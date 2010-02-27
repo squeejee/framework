@@ -33,20 +33,12 @@ gem 'grid-coordinates',     '>= 1.0.3'
 #   gem "webrat"
 # end
 group :test do
-    gem 'cucumber',         '>= 0.6.2'
-    gem 'webrat',           '>= 0.7.0'
-    gem 'rspec',            '>= 1.3.0'
-    gem 'rspec-rails',      '>= 1.3.2'
-    gem 'factory_girl',     '>= 1.2.3', :require => 'factory_girl'
+    gem 'cucumber',         '>= 0.6.2'                                  , :git => "git://github.com/aslakhellesoy/cucumber.git"
+    gem 'cucumber-rails',   '>= 0.3.0'                                  , :git => "git://github.com/aslakhellesoy/cucumber-rails.git"
+    gem 'capybara',         '>= 0.3.0'
+    gem 'rspec',            '>= 2.0.0.a8'                               , :git => "git://github.com/rspec/rspec.git"
+    gem 'rspec-rails',      '>= 2.0.0.a8'                               , :git => "git://github.com/rspec/rspec-rails.git"
+    gem 'factory_girl',     '>= 1.2.3', :require => false               , :git => "git://github.com/thoughtbot/factory_girl.git", :branch => "rails3"
     gem 'pickle',           '>= 0.2.1'
     gem 'metric_fu',        '>= 1.3.0', :require => 'metric_fu'
-end
-
-group :cucumber do
-    gem 'cucumber-rails',   '>= 0.2.4'
-    gem 'database_cleaner', '>= 0.5.0'
-    gem 'webrat',           '>= 0.7.0'
-    gem 'rspec',            '>= 1.3.0'
-    gem 'rspec-rails',      '>= 1.3.2'
-    gem 'factory_girl',     '>= 1.2.3', :require => 'factory_girl'
 end

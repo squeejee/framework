@@ -21,8 +21,9 @@ Feature: Account Update
     
   Scenario: User can update their account with valid data
     When I go to the account edit page
-    And I fill in "password" with "passw0rd"
-    And I fill in "password confirmation" with "passw0rd"
-    And I fill in "current password" with "password"
+    And I fill in the following:
+      | Password                 | passw0rd |
+      | Password confirmation    | passw0rd |
+      | Current Password         | password |
     And I press "Update"
     Then I should see "You updated your account successfully"

@@ -54,10 +54,9 @@ class HandcraftedFormBuilder < ActionView::Helpers::FormBuilder
   alias_method_chain :time_zone_select, :div
   
   def submit(*args)
-    block_output = (yield).to_s if block_given?
-    block_output = " " + block_output unless block_output.blank?
+    block_output = (yield) if block_given?
     @template.content_tag(:div, :class => "form_actions") do
-      super(*args) + block_output.to_s
+      super(*args) + block_output
     end
   end
   

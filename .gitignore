@@ -1,5 +1,6 @@
 .sass-cache
 app/stylesheets/.sass-cache
+.bundle
 log/*.log
 log/*.pid
 coverage

@@ -2,13 +2,11 @@ class User < ActiveRecord::Base
   devise :authenticatable, :lockable, :recoverable,
          :rememberable, :registerable, :trackable, :timeoutable, :validatable
   
-  attr_accessible :login, :email, :password, :password_confirmation
+  attr_protected :admin
   
-  has_friendly_id :login, :use_slug => true
+#  has_friendly_id :login, :use_slug => true
   
   liquid_methods :display_name, :perishable_token
-  
-#  attr_protected :admin
   
   #Validations
   validates_uniqueness_of :email, :case_sensitive => false
@@ -21,7 +19,7 @@ class User < ActiveRecord::Base
   has_one :profile
   
   #Callbacks
-  before_validation_on_create :make_login
+  before_validation :make_login, :on => :create
   before_create :make_first_admin
   after_create :create_profile
   

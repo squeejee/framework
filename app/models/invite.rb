@@ -13,10 +13,10 @@ class Invite < ActiveRecord::Base
   
   attr_accessible :email, :inviter_id
   
-  named_scope :usable, lambda {|email| {:conditions => ["email = ? AND used = ? AND approved = ?", email, false, true]} }
-  named_scope :unused, :conditions => ["used = ?", false]
-  named_scope :used, :conditions => ["used = ?", true]
-  named_scope :unapproved, :conditions => ["approved = ? OR approved IS NULL", false]
+  scope :usable, lambda {|email| {:conditions => ["email = ? AND used = ? AND approved = ?", email, false, true]} }
+  scope :unused, :conditions => ["used = ?", false]
+  scope :used, :conditions => ["used = ?", true]
+  scope :unapproved, :conditions => ["approved = ? OR approved IS NULL", false]
   
   def ensure_new_user
     errors.add(:email, "has already been used for an active account") unless new_user?

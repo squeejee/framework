@@ -5,6 +5,7 @@ Factory.define :valid_user , :class => User do |u|
   u.password_confirmation "123456"
   u.admin false
   u.invites 3
+  u.association :profile, :factory => :profile
 end
 
 Factory.define :admin_user , :class => User do |u|

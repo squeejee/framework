@@ -37,8 +37,8 @@ group :test do
     gem 'cucumber',         '>= 0.6.2'                                  , :git => "git://github.com/aslakhellesoy/cucumber.git"
     gem 'cucumber-rails',   '>= 0.3.0'                                  , :git => "git://github.com/aslakhellesoy/cucumber-rails.git"
     gem 'capybara',         '>= 0.3.0'
-    gem 'rspec',            '>= 2.0.0.a8'                               , :git => "git://github.com/rspec/rspec.git"
-    gem 'rspec-rails',      '>= 2.0.0.a8'                               , :git => "git://github.com/rspec/rspec-rails.git"
+    gem 'rspec',            '>= 2.0.0.a9'                               , :git => "git://github.com/rspec/rspec.git", :branch => "b57ccd1fa897d683ace598c4d2fb361a634d82a7"
+    gem 'rspec-rails',      '>= 2.0.0.a9'                               , :git => "git://github.com/rspec/rspec-rails.git", :branch => "316ec020de89d8d14a26e1e38016cc16c8861370"
     gem 'factory_girl',     '>= 1.2.3', :require => false               , :git => "git://github.com/thoughtbot/factory_girl.git", :branch => "rails3"
     gem 'pickle',           '>= 0.2.1'
     gem 'metric_fu',        '>= 1.3.0', :require => 'metric_fu'

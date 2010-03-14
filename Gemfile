@@ -12,15 +12,15 @@ gem "rails", :git => "git://github.com/rails/rails.git"
 gem "sqlite3-ruby", :require => "sqlite3"
 
 ## Bundle the gems you use:
-gem 'warden',               '>= 0.9.4'                                  , :git => "git://github.com/hassox/warden.git"
-gem 'devise',               '>= 1.1.pre'                                , :git => "git://github.com/plataformatec/devise.git"
+gem 'warden',               '>= 0.9.7'                                  , :git => "git://github.com/hassox/warden.git"
+gem 'devise',               '>= 1.1.pre4'                               , :git => "git://github.com/plataformatec/devise.git"
 gem 'chronic',              '>= 0.2.3'
-gem 'will_paginate',        '>= 2.3.11',  :require => 'will_paginate'
+gem 'will_paginate',        '>= 2.3.12',  :require => 'will_paginate'   , :git => "git://github.com/yabawock/will_paginate.git"
 gem 'paperclip',            '>= 2.2.9',   :require => 'paperclip'       , :git => "git://github.com/thoughtbot/paperclip.git", :branch => "rails3"
 gem 'liquid',               '>= 2.0.0'                                  , :git => "git://github.com/tobi/liquid.git"
-gem 'haml',                 '>= 2.2.0'
-gem 'compass',              '>= 0.10.0.pre8'                            , :git => "git://github.com/chriseppstein/compass.git"
-gem 'grid-coordinates',     '>= 1.0.3'
+gem 'haml',                 '>= 2.2.21'
+gem 'compass',              '>= 0.10.0.rc1'
+gem 'grid-coordinates',     '>= 1.0.4',   :require => 'compass'
 gem 'hoptoad_notifier',     '>= 2.2.0'
 # Unsupported on Rails3 as of now
 # gem 'newrelic_rpm',         '>= 2.9.5'                                , :git => "git://github.com/newrelic/rpm.git"
@@ -34,13 +34,13 @@ gem 'hoptoad_notifier',     '>= 2.2.0'
 #   gem "webrat"
 # end
 group :test do
-    gem 'cucumber',         '>= 0.6.2'                                  , :git => "git://github.com/aslakhellesoy/cucumber.git"
-    gem 'cucumber-rails',   '>= 0.3.0'                                  , :git => "git://github.com/aslakhellesoy/cucumber-rails.git"
-    gem 'capybara',         '>= 0.3.0'
-    gem 'rspec',            '>= 2.0.0.a9'                               , :git => "git://github.com/rspec/rspec.git", :branch => "b57ccd1fa897d683ace598c4d2fb361a634d82a7"
-    gem 'rspec-rails',      '>= 2.0.0.a9'                               , :git => "git://github.com/rspec/rspec-rails.git", :branch => "316ec020de89d8d14a26e1e38016cc16c8861370"
-    gem 'factory_girl',     '>= 1.2.3', :require => false               , :git => "git://github.com/thoughtbot/factory_girl.git", :branch => "rails3"
+    gem 'cucumber',         '>= 0.6.3'
+    gem 'cucumber-rails',   '>= 0.3.0'
+    gem 'capybara',         '>= 0.3.5'
+    gem 'rspec',            '>= 2.0.0.beta.3'
+    gem 'rspec-rails',      '>= 2.0.0.beta.3'
+    gem 'factory_girl',     '>= 1.2.3',   :require => false             , :git => "git://github.com/thoughtbot/factory_girl.git", :branch => "rails3"
     gem 'pickle',           '>= 0.2.1'
-    gem 'metric_fu',        '>= 1.3.0', :require => 'metric_fu'
-    gem 'no_peeping_toms'                                               , :git => "git://github.com/patmaddox/no-peeping-toms.git"
+    gem 'metric_fu',        '>= 1.3.0',   :require => 'metric_fu'
+    gem 'no_peeping_toms',  '>= 1.1.0'                                  , :git => "git://github.com/patmaddox/no-peeping-toms.git"
 end

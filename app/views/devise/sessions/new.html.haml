@@ -5,8 +5,8 @@
     = "Sign In"
 
 #page_body
-  - form_for resource_name, resource, :url => session_path(resource_name), :builder => HandcraftedFormBuilder do |f|
-    - field_set_tag do
+  = form_for resource_name, resource, :url => session_path(resource_name), :builder => HandcraftedFormBuilder do |f|
+    = field_set_tag do
       = f.text_field :email
       = f.password_field :password
       = f.submit "Sign In" do

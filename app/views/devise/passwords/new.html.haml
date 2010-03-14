@@ -6,7 +6,7 @@
 
 #page_body
   = error_messages_for :user
-  - form_for resource_name, resource, :url => password_path(resource_name) do |f|
+  = form_for resource_name, resource, :url => password_path(resource_name) do |f|
     %fieldset
       = f.text_field :email
       = f.submit "Reset Password"

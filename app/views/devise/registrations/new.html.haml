@@ -6,7 +6,7 @@
 
 #page_body
   = error_messages_for :user
-  - form_for resource_name, resource, :url => registration_path(resource_name), :builder => HandcraftedFormBuilder do |f|
+  = form_for resource_name, resource, :url => registration_path(resource_name), :builder => HandcraftedFormBuilder do |f|
     %fieldset
       %legend Sign up for an Account
       = f.text_field :email, :example => "johnsmith@gmail.com"

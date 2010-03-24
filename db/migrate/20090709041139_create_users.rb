@@ -7,9 +7,6 @@ class CreateUsers < ActiveRecord::Migration
       t.recoverable
       t.rememberable
       t.trackable
-      t.registerable
-      t.timeoutable
-      t.validatable
       
       t.string  :time_zone
       t.integer :invites,               :null => false, :default => 0

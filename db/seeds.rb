@@ -1,8 +1,14 @@
+User.create(
+  :login => "admin",
+  :email => "admin@foo.com",
+  :password => "password",
+  :password_confirmation => "password"
+)
 SiteSetting.create(
-  :name => "Four Bean Soup Broth",
-  :admin_email => "admin@fourbeansoup.com",
-  :url => "http://fourbeansoup.com",
-  :description => "A website cooked with beautiful tasty code"
+  :name => "ACME",
+  :admin_email => "admin@acme.com",
+  :url => "http://acme.com",
+  :description => "A little bit of awesome"
 )
 EmailTemplate.attr_protected.delete "name"
 EmailTemplate.create([

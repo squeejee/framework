@@ -6,16 +6,18 @@ source 'http://gemcutter.org'
 
 ## Bundle edge rails:
 gem "rails", :git => "git://github.com/rails/rails.git"
+#gem "rails", "3.0.0.beta"
 
 # ActiveRecord requires a database adapter. By default,
 # Rails has selected sqlite3.
 gem "sqlite3-ruby", :require => "sqlite3"
+gem "mysql"
 
 ## Bundle the gems you use:
-gem 'warden',               '>= 0.9.7'                                  , :git => "git://github.com/hassox/warden.git"
-gem 'devise',               '>= 1.1.pre4'                               , :git => "git://github.com/plataformatec/devise.git"
+gem 'warden'
+gem 'devise', :git => "git://github.com/plataformatec/devise.git"
 gem 'chronic',              '>= 0.2.3'
-gem 'will_paginate',        '>= 2.3.12',  :require => 'will_paginate'   , :git => "git://github.com/yabawock/will_paginate.git"
+gem 'will_paginate',        '>= 3.0.pre'
 gem 'paperclip',            '>= 2.2.9',   :require => 'paperclip'       , :git => "git://github.com/thoughtbot/paperclip.git", :branch => "rails3"
 gem 'liquid',               '>= 2.0.0'                                  , :git => "git://github.com/tobi/liquid.git"
 gem 'haml',                 '>= 2.2.21'
@@ -34,6 +36,7 @@ gem 'hoptoad_notifier',     '>= 2.2.0'
 #   gem "webrat"
 # end
 group :test do
+    gem 'test-unit',        '1.2.3'
     gem 'cucumber',         '>= 0.6.3'
     gem 'cucumber-rails',   '>= 0.3.0'
     gem 'capybara',         '>= 0.3.5'

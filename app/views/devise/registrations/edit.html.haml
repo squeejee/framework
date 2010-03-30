@@ -16,6 +16,6 @@
           = p.file_field :avatar
       = f.password_field :password
       = f.password_field :password_confirmation
-      = f.password_field :current_password, :label => "Current Password <i>(we need your current password to confirm your changes)</i>"
+      = f.password_field :current_password, :label => "Current Password (to confirm your changes)"
       = f.submit "Update" do
         - link_to "Cancel", account_url, :class => "red"

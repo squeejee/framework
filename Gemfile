@@ -6,12 +6,15 @@ source 'http://gemcutter.org'
 
 ## Bundle edge rails:
 gem "rails", :git => "git://github.com/rails/rails.git"
-#gem "rails", "3.0.0.beta"
+# gem "rails", "3.0.0.beta"
 
 # ActiveRecord requires a database adapter. By default,
 # Rails has selected sqlite3.
 gem "sqlite3-ruby", :require => "sqlite3"
 gem "mysql"
+gem "mongo"
+gem "mongo_ext"
+gem "mongoid", '>=2.0.0.beta1'
 
 ## Bundle the gems you use:
 gem 'warden'

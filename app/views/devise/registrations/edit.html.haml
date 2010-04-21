@@ -9,11 +9,8 @@
       = f.text_field :email, :example => "johnsmith@gmail.com"
       = f.text_field :login, :label => "Profile url", :example => "#{@site.url}/profile_url"
       = f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones
-      = f.fields_for :profile, :builder => HandcraftedFormBuilder do |p|
-        = p.text_field :first_name
-        = p.text_field :last_name
-        - if @site.user_avatars?
-          = p.file_field :avatar
+      = f.text_field :first_name
+      = f.text_field :last_name
       = f.password_field :password
       = f.password_field :password_confirmation
       = f.password_field :current_password, :label => "Current Password (to confirm your changes)"

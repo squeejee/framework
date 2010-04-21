@@ -9,7 +9,9 @@ class User
   field :email
   field :first_name
   field :last_name
-  field :global_admin, :type => Boolean
+  field :admin, :type => Boolean
+  field :subscribed, :type => Boolean, :default => false
+  field :time_zone
   field :deleted_at, :type => DateTime
   
 #  has_friendly_id :login, :use_slug => true
@@ -57,12 +59,11 @@ class User
   # def first_user?
   #   User.count == 0
   # end
-  # 
-  # def display_name
-  #   return profile.fullname if profile && profile.fullname
-  #   email
-  # end
-  # 
+  
+  def display_name
+    return email unless first_name && last_name
+  end
+  
   # def has_invites?
   #   invites > 0 || admin?
   # end

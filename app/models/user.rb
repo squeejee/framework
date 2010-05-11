@@ -1,16 +1,12 @@
 class User
- 
   include Mongoid::Document
   
-  devise :authenticatable, :lockable, :recoverable,
-         :rememberable, :registerable, :trackable, :timeoutable, :validatable
+  devise :database_authenticatable, :lockable, :recoverable,
+         :rememberable, :registerable, :trackable, :timeoutable
     
   field :login
   field :email
-  field :first_name
-  field :last_name
   field :admin, :type => Boolean
-  field :subscribed, :type => Boolean, :default => false
   field :time_zone
   field :deleted_at, :type => DateTime
   
@@ -19,11 +15,23 @@ class User
   liquid_methods :display_name, :perishable_token
   
   #Validations
+  validates_presence_of     :email
+  validates_uniqueness_of   :email, :allow_blank => true
+  validates_format_of       :email, :with => /\A[\w\.%\+\-]+@(?:[A-Z0-9\-]+\.)+(?:[A-Z]{2,4}|museum|travel)\z/i, :allow_blank => true
+
+  validates_presence_of     :password, :if => :password_required?
+  validates_confirmation_of :password, :if => :password_required?
+  validates_length_of       :password, :within => 5..20, :allow_blank => true, :if => :password_required?
+  
   validates_uniqueness_of :email, :case_sensitive => false
   validates_uniqueness_of :login, :case_sensitive => false
   validates_presence_of :email
   validates_presence_of :login
   validates_length_of :email,    :within => 3..100
+  
+  #Associations
+  embed_one :profile
+  
   # 
   # #Associations
   # has_one :profile
@@ -72,5 +80,9 @@ class User
   #   reset_perishable_token!  
   #   Notifier.send_later(:deliver_password_reset_instructions, self)  
   # end
-
+  private
+  
+  def password_required?
+    new_record? || !password.blank? || !password_confirmation.blank?
+  end
 end

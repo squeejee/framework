@@ -3,7 +3,7 @@ class Admin::UsersController < AdminController
 
   def index
     @page = params[:page] || 1
-    @users = User.all.paginate(:page => @page)
+    @users = User.paginate(:page => @page)
     
     respond_to do |format|
       format.html

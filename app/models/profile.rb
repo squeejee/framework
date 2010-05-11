@@ -1,9 +1,15 @@
-class Profile < ActiveRecord::Base
+class Profile 
+  include Mongoid::Document
+  
+  field :first_name
+  field :last_name
+  field :subscribed, :type => Boolean, :default => false
+  
   liquid_methods :email
   
-  belongs_to :user
+  embedded_in :user, :inverse_of => :profile
   
-  has_attached_file :avatar, :styles => {:thumb => "16x16>", :small => "48x48>", :large => "100x100>", :xlarge => "150x150>"}, :default_url => "/images/foundation/default_:style_avatar.png"
+  # has_attached_file :avatar, :styles => {:thumb => "16x16>", :small => "48x48>", :large => "100x100>", :xlarge => "150x150>"}, :default_url => "/images/foundation/default_:style_avatar.png"
   
   def fullname
     return nil unless first_name && last_name

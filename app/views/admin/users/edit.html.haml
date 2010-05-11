@@ -3,7 +3,7 @@
     = "Editing #{@user.display_name}"
 
 #page_body
-  / Edit user form
+  = error_messages_for :user
   - form_for @user, :url => admin_user_url(@user), :builder => HandcraftedFormBuilder do |f|
     = f.text_field :email, :example => "Frank@gethandcrafted.com"
     = f.password_field :password

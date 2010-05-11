@@ -12,8 +12,9 @@ gem "rails", :git => "git://github.com/rails/rails.git"
 # Rails has selected sqlite3.
 gem "sqlite3-ruby", :require => "sqlite3"
 gem "mysql"
-gem "mongo"
-gem "mongo_ext"
+gem "mongo", "0.20.1"
+gem "bson", "0.20.1"
+gem "bson_ext", "0.20.1"
 gem "mongoid", '>=2.0.0.beta1'
 
 ## Bundle the gems you use:

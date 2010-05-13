@@ -21,7 +21,7 @@ class Mailer < ActionMailer::Base
     reply_to site.admin_email.to_s
     self.mailer_name = 'shared'
     self.template = 'email.html.erb'
-    self.template_root = "#{RAILS_ROOT}/app/views"
+    self.template_root = "#{Rails.root}/app/views"
 
     options = { 'site' => site }
     yield options if block_given?

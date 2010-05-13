@@ -28,6 +28,7 @@ gem 'haml',                 '>= 2.2.21'
 gem 'compass',              '>= 0.10.0.rc1'
 gem 'grid-coordinates',     '>= 1.0.4',   :require => 'compass'
 gem 'hoptoad_notifier',     '>= 2.2.0'
+
 # Unsupported on Rails3 as of now
 # gem 'newrelic_rpm',         '>= 2.9.5'                                , :git => "git://github.com/newrelic/rpm.git"
 # gem 'friendly_id',          '>= 2.1.1'
@@ -40,6 +41,9 @@ gem 'hoptoad_notifier',     '>= 2.2.0'
 #   gem "webrat"
 # end
 group :test do
+    gem 'machinist'
+    gem 'machinist_mongo'
+    gem 'forgery'
     gem 'test-unit',        '1.2.3'
     gem 'cucumber',         '>= 0.6.3'
     gem 'cucumber-rails',   '>= 0.3.0'

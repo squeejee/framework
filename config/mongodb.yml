@@ -1,3 +1,7 @@
 development:
   host: localhost
   database: framework_dev
+  
+test:
+    host: localhost
+    database: framework_test
